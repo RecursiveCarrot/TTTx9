@@ -32,7 +32,7 @@ GameManager.prototype.listen = function(blocks) {
 		var game_manager = this
 		cell.addEventListener("click", function (){
 			if (game_manager.player && (Math.floor(this.id/9)==game_manager.lastmove 
-				|| (game_manager.lastmove==-1 && game_manager.availableBlocks.indexOf(Math.floor(this.id/9))>-1)) && !this.over){
+				|| (game_manager.lastmove==-1 && game_manager.availableBlocks.indexOf(Math.floor(this.id/9))>-1)) && !game_manager.over){
 				this.style.background = "rgba(118, 118, 218, 1)";
 				game_manager.player = !game_manager.player;
 				game_manager.lastmove = this.id%9;
@@ -43,7 +43,7 @@ GameManager.prototype.listen = function(blocks) {
 				game_manager.curBlock();
 				this.removeEventListener("click", arguments.callee)
 			}
-			else if ((Math.floor(this.id/9)==game_manager.lastmove || (game_manager.lastmove==-1 && game_manager.availableBlocks.indexOf(Math.floor(this.id/9))>-1)) && !this.over){
+			else if ((Math.floor(this.id/9)==game_manager.lastmove || (game_manager.lastmove==-1 && game_manager.availableBlocks.indexOf(Math.floor(this.id/9))>-1)) && !game_manager.over){
 				this.style.background = "rgba(218, 118, 118, 1)";
 				game_manager.player = !game_manager.player;
 				game_manager.lastmove = this.id%9;
