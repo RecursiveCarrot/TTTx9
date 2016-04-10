@@ -1,0 +1,126 @@
+body {
+	margin: 80px 0;
+	padding: 0;
+	background: #faf8ef;
+	color: #776e65;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+}
+
+.container {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.container:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.title-block:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+h1.title {
+	font-size: 80px;
+	font-weight: bold;
+	margin: 0;
+	display: block;
+	float: left;
+}
+
+.game-block {
+	margin-top: 20px;
+	position: relative;
+	cursor: default;
+	background: #bbada0;
+	border-radius: 6px;
+	width: 600px;
+	height: 600px;
+}
+
+.grid-container {
+	position: absolute;
+	z-index: 1;
+}
+.game-block:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.grid-row {
+	float: left;
+	margin-top: 15px;
+}
+
+.grid-row:last-child {
+	margin-bottom: 15px;
+}
+
+.grid-row:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.grid-column {
+	width: 170px;
+	height: 170px;
+	margin-left: 15px;
+	float: left;
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 0);
+	border-width: 5px;
+	border-radius: 6px;
+	background: rgba(188, 228, 218, 0.35);
+}
+
+.grid-column:last-child {
+	margin-right: 15px;
+}
+
+.cell-row {
+	margin-top: 10px;
+}
+
+.cell-row:last-child {
+	margin-bottom: 10px;
+}
+
+.cell-row:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.cell-column {
+	width: 43.34px;
+	height: 43.34px;
+	margin-left: 10px;
+	float: left;
+	border-radius: 6px;
+	background: rgba(238, 228, 218, 0.85);
+	cursor: pointer;
+}
+
+.cell-column:last-child {
+	margin-right: 10px;
+}
+
+.grid-overlay {
+  position: absolute;
+  z-index: 2;
+}
+
+.game-explanation {
+	margin-top: 50px; 
+}
+
+hr.style2 { 
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
