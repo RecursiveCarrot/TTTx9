@@ -148,7 +148,7 @@ GameManager.prototype.boardTerminal = function() {
 			this.won = -1;
 			this.end();
 			console.log("Draw");
-		};
+		}
 		else{};
 	};
 };
