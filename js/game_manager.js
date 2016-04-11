@@ -40,7 +40,8 @@ GameManager.prototype.listen = function(blocks) {
 				game_manager.blockTerminal();
 				game_manager.boardTerminal();
 				blocks = game_manager.availableMoves();
-				if (!game_manager.over) {game_manager.curBlock();};
+				if (!game_manager.over) {game_manager.curBlock();}
+				else{game_manager.clean()};
 				this.removeEventListener("click", arguments.callee)
 			}
 			else if ((Math.floor(this.id/9)==game_manager.lastmove || (game_manager.lastmove==-1 && game_manager.availableBlocks.indexOf(Math.floor(this.id/9))>-1)) && !game_manager.over){
@@ -51,11 +52,18 @@ GameManager.prototype.listen = function(blocks) {
 				game_manager.blockTerminal();
 				game_manager.boardTerminal();
 				blocks = game_manager.availableMoves();
-				if (!game_manager.over) {game_manager.curBlock();};
+				if (!game_manager.over) {game_manager.curBlock();}
+				else{game_manager.clean()};
 				this.removeEventListener("click", arguments.callee);
 			}
 			else{};
 		});
+	};
+};
+
+GameManager.prototype.clean = function(){
+	for (var i = 0; i<this.block_lst.length; i++){
+		this.block_lst[i].style.borderColor = "rgba(0, 0, 0, 0)";
 	};
 };
 
