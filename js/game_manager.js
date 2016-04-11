@@ -144,6 +144,11 @@ GameManager.prototype.boardTerminal = function() {
 				console.log("Red Wins");
 			};
 		}
+		else if (this.availableBlocks.length < 1){
+			this.won = -1;
+			this.end();
+			console.log("Draw");
+		};
 		else{};
 	};
 };
