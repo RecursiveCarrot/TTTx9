@@ -89,11 +89,11 @@ GameManager.prototype.blockTerminal = function() {
 	triplets = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6]
 		,[0,3,6],[1,4,7],[2,5,8]]
 	for (var i = 0; i<this.availableBlocks.length; i++){
+		var k = this.availableBlocks[i];
 		for (var j = 0; j<triplets.length; j++){
 			var x = triplets[j][0];
 			var y = triplets[j][1];
 			var z = triplets[j][2];
-			var k = this.availableBlocks[i];
 			var cells = this.board.cells;
 			if(cells[k][x]==cells[k][y] && cells[k][y]==cells[k][z]){
 				if (cells[k][x] == 1){
