@@ -88,17 +88,6 @@ GameManager.prototype.curBlock = function() {
 GameManager.prototype.blockTerminal = function() {
 	triplets = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6]
 		,[0,3,6],[1,4,7],[2,5,8]]
-	for (var i = 0; i<9; i++){
-		var isFull = true;
-		for (var j = 0; j<9; j++){
-			if (this.board.cells[i][j]==0){
-				isFull = false;
-			};
-		};
-		if(isFull){
-			__del_elem(this.availableBlocks, i);
-		};
-	};
 	for (var i = 0; i<this.availableBlocks.length; i++){
 		for (var j = 0; j<triplets.length; j++){
 			var x = triplets[j][0];
@@ -119,6 +108,18 @@ GameManager.prototype.blockTerminal = function() {
 				};
 			}
 			else{};
+		};
+	};
+	for (var i = 0; i<this.availableBlocks.length; i++){
+		var k = this.availableBlocks[i];
+		var isFull = true;
+		for (var j = 0; j<9; j++){
+			if (this.board.cells[k][j]==0){
+				isFull = false;
+			};
+		};
+		if(isFull){
+			__del_elem(this.availableBlocks, k);
 		};
 	};
 };
